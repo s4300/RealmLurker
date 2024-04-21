@@ -45,11 +45,12 @@
     const RealmListUrl = "https://raw.githubusercontent.com/s4300/RealmLurker/main/realmcodes.json";
     var RealmCodes = [];
 
-    fetch(RealmListUrl).then(res => {
-        RealmCodes = res.json();
+    fetch(RealmListUrl).then((response) => response.json())
+    .then((data) => {
+        RealmCodes = data;
+        RealmAmountLabel.textContent = RealmCodes.length;
     });
 
-    RealmAmountLabel.textContent = RealmCodes.length;
     FindRealmButton.addEventListener("click", () => {
         var RandomRealm = RealmCodes[Math.floor(Math.random() * RealmCodes.length)];
         if (RandomRealm == undefined) RandomRealm = "";
