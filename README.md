@@ -7,7 +7,7 @@ Easily find public realms.
 ## Assistance
 > How can I use this tool?
 
-You can use RealmLurker [here](https://s4300.github.io/realmlurker).
+You can use RealmLurker [here](https://s4300.github.io/RealmLurker/).
 
 > How can I contribute?
 
