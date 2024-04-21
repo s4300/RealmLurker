@@ -51,7 +51,7 @@
 
     RealmAmountLabel.textContent = RealmCodes.length;
     FindRealmButton.addEventListener("click", () => {
-        const RandomRealm = RealmCodes[Math.floor(Math.random() * RealmCodes.length)];
+        var RandomRealm = RealmCodes[Math.floor(Math.random() * RealmCodes.length)];
         if (RandomRealm == undefined) RandomRealm = "";
         RealmCodeLabel.textContent = `${RandomRealm}`;
         JoinRealmButton.setAttribute("href", `minecraft://acceptRealmInvite?inviteID=${RandomRealm}`);
