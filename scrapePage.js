@@ -32,4 +32,4 @@ for (const link of links) {
 //     };
 // };
 
-console.log(`Found links: ${JSON.stringify(codesFound)}`)
+console.log(`New JSON (Paste into realmcodes.json file!): ${JSON.stringify(codesFound)}`)
