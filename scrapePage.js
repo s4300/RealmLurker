@@ -1,11 +1,11 @@
 let links = document.querySelectorAll("a");
 let spans = document.querySelectorAll("span");
-let codesFound = [];
+let codesJson = [];
 
 let existingJson = prompt("Insert existing code list json. (If there isn't any, just leave this blank!)");
 try {
     if (JSON.parse(existingJson)) {
-        codesFound = JSON.parse(existingJson);
+        codesJson = JSON.parse(existingJson);
     };
 } catch {
     console.log("Error loading JSON.");
@@ -20,10 +20,10 @@ for (const link of links) {
             code = code.replace("/", "");
         };
         // Check if code is already in the list, if so, then skip this code.
-        if (codesFound.includes(code)) break;
-        //codesFound.push({"code": code});
-        codesFound.push(code);
+        if (!codesJson["realms"].includes(code) && !codesJson["blocked_realms"].includes(code) && !codesJson["expired_realms"].includes(code)) {
+            codesFound["realms"].push(code);
+        };
     };
 };
 
-console.log(`New JSON (Paste into realmcodes.json file!): ${JSON.stringify(codesFound)}`)
+console.log(`New JSON (Paste into realmcodes.json file!): ${JSON.stringify(codesJson)}`)
