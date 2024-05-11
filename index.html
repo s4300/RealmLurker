@@ -52,12 +52,12 @@
 
     fetch(RealmListUrl).then((response) => response.json())
     .then((data) => {
-        RealmCodes = data;
+        RealmCodes = data["realms"];
         RealmAmountLabel.textContent = RealmCodes.length;
     });
 
     FindRealmButton.addEventListener("click", () => {
-        var RandomRealm = RealmCodes["realms"][Math.floor(Math.random() * RealmCodes.length)];
+        var RandomRealm = RealmCodes[Math.floor(Math.random() * RealmCodes.length)];
         if (RandomRealm == undefined) RandomRealm = "";
         RealmCodeLabel.textContent = `${RandomRealm}`;
         JoinRealmButton.setAttribute("href", `minecraft://acceptRealmInvite?inviteID=${RandomRealm}`);
