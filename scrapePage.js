@@ -21,7 +21,7 @@ for (const link of links) {
         };
         // Check if code is already in the list, if so, then skip this code.
         if (!codesJson["realms"].includes(code) && !codesJson["blocked_realms"].includes(code) && !codesJson["expired_realms"].includes(code)) {
-            codesFound["realms"].push(code);
+            codesJson["realms"].push(code);
         };
     };
 };
